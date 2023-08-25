@@ -1,0 +1,214 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>  
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>    
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <Version>12.2.6.1</Version>
+    <AssemblyName>ReportGeneratorDemo</AssemblyName>
+    <RootNamespace>ReportGeneratorDemo</RootNamespace>
+    <StartupObject>ReportGeneratorDemo.Program</StartupObject>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>NETCORE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>NETCORE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Win32.Registry" Version="6.0.0-preview.5.21301.5" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Vintasoft.Barcode" Version="14.1.11.1" />
+    <PackageReference Include="Vintasoft.Barcode.Gdi" Version="14.1.11.1" />
+    <PackageReference Include="Vintasoft.Imaging" Version="12.2.6.1" />
+    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.2.6.1" />
+    <PackageReference Include="Vintasoft.Imaging.Office.OpenXml" Version="4.2.6.1" />
+    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.2.6.1" />
+    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.2.6.1" />
+    <PackageReference Include="Vintasoft.Shared" Version="4.0.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DemosCommonCode.Imaging\Codecs\CodecsFileFilters.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\DocumentPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\DocumentPasswordForm.designer.cs">
+      <DependentUpon>DocumentPasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\Fonts\CustomFontProgramsController.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\ImageViewerPrintManager.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\ImageViewerToolStrip\ImageViewerToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\ImageViewerToolStrip\ImageViewerToolStrip.designer.cs">
+      <DependentUpon>ImageViewerToolStrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\ImageViewerToolStrip\PageIndexChangedEventArgs.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\Resources\DemosResourcesManager.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\SelectImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\SelectImageForm.designer.cs">
+      <DependentUpon>SelectImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemosCommonCode.Imaging\VisualTools\DocumentNavigationTool\UriActionExecutor.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode\AboutBoxBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemosCommonCode\AboutBoxBaseForm.designer.cs">
+      <DependentUpon>AboutBoxBaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DemosCommonCode\DemosTools.cs">
+    </Compile>
+    <Compile Include="DemosCommonCode\WebUploaderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DemosCommonCode\WebUploaderForm.designer.cs">
+      <DependentUpon>WebUploaderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AboutBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutBoxForm.Designer.cs">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Examples\Docx\DocxEditorExample.cs" />
+    <Compile Include="Examples\Xlsx\XlsxEditorExample.cs" />
+    <Compile Include="Examples\Chart\Docx\DocxChartEditExample.cs" />
+    <Compile Include="ReportGenerators\Invoice\Data\Company.cs" />
+    <Compile Include="ReportGenerators\Invoice\Data\InvoiceData.cs" />
+    <Compile Include="ReportGenerators\Invoice\Data\InvoiceItem.cs" />
+    <Compile Include="ReportGenerators\Invoice\Data\TestInvoiceData.cs" />
+    <Compile Include="ReportGenerators\Invoice\Xlsx\XlsxInvoiceGenerator.cs" />
+    <Compile Include="ReportGenerators\Invoice\Docx\DocxInvoiceGenerator.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportGenerators\ColorTable\ColorTableReport.cs" />
+    <Compile Include="ReportGenerators\LoadedAsseblies\LoadedAssembliesReport.cs" />
+    <Compile Include="ReportGenerators\LoadedAsseblies\TableCellData.cs" />
+    <Compile Include="ReportGenerators\PriceList\Data\PriceListItem.cs" />
+    <Compile Include="ReportGenerators\PriceList\Data\TestPriceListData.cs" />
+    <Compile Include="ReportGenerators\PriceList\Docx\DocxPriceListGenerator.cs" />
+    <Compile Include="ReportGenerators\PriceList\Xlsx\XlsxPriceListGenerator.cs" />
+    <Content Include="directives.txt" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsformsprocessing-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsoffice-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsannotation-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsbarcode-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsdicom-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsdoccleanup-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsimaging-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsjbig2-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsjpeg2000-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vsocr-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vspdf-icon.png" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Data\vstwain-icon.png" />
+    <EmbeddedResource Include="DemosCommonCode.Imaging\DocumentPasswordForm.resx">
+      <DependentUpon>DocumentPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AboutBoxForm.resx">
+      <DependentUpon>AboutBoxForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Examples\Docx\Example_template.docx" />
+    <EmbeddedResource Include="Examples\Xlsx\Example_template.xlsx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\ImageViewerToolStrip.resx">
+      <DependentUpon>ImageViewerToolStrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\camera.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\navigate_beginning.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\navigate_end.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\navigate_left.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\navigate_right.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\open.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\printer.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\save.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\scanner.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\zoom_in.png">
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode.Imaging\ImageViewerToolStrip\Resources\zoom_out.png">
+    </EmbeddedResource>
+    <Content Include="App.ico" />
+    <EmbeddedResource Include="DemosCommonCode.Imaging\SelectImageForm.resx">
+      <DependentUpon>SelectImageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode\AboutBoxBaseForm.resx">
+      <DependentUpon>AboutBoxBaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DemosCommonCode\WebUploaderForm.resx">
+      <DependentUpon>WebUploaderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportGenerators\LoadedAsseblies\LoadAssemblies_template.docx" />
+    <EmbeddedResource Include="ReportGenerators\ColorTable\ColorTable_template.docx" />
+    <EmbeddedResource Include="ReportGenerators\Invoice\Docx\Invoice_template.docx" />
+    <EmbeddedResource Include="ReportGenerators\Invoice\Xlsx\Invoice_template.xlsx" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Docx\PriceList_template.docx" />
+    <EmbeddedResource Include="ReportGenerators\PriceList\Xlsx\PriceList_template.xlsx" />
+    <EmbeddedResource Include="Examples\Chart\Docx\Chart_template.docx" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,2 @@
+The project contains the following compiler directives:
+1. REMOVE_BARCODE_SDK -  allows to disable code, which references to VintaSoft Barcode SDK
