@@ -8,7 +8,7 @@ This C# project uses <a href="https://www.vintasoft.com/vsimaging-dotnet-index.h
 
 
 ## Screenshot
-<img src="vintasoft-report-generator-demo.png" alt="VintaSoft Report Generator Demo">
+<img src="vintasoft-report-generator-demo.png" title="VintaSoft Report Generator Demo">
 
 
 ## Usage
