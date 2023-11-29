@@ -18,7 +18,9 @@ namespace ReportGeneratorDemo
         /// </summary>
         static InvoiceData()
         {
+#if !REMOVE_BARCODE_SDK
             Vintasoft.Barcode.GdiAssembly.Init();
+#endif
         }
 
         #endregion

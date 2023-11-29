@@ -12,7 +12,7 @@
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>    
     <EnableDefaultItems>false</EnableDefaultItems>
-    <Version>12.2.12.1</Version>
+    <Version>12.3.0.1</Version>
     <AssemblyName>ReportGeneratorDemo</AssemblyName>
     <RootNamespace>ReportGeneratorDemo</RootNamespace>
     <StartupObject>ReportGeneratorDemo.Program</StartupObject>
@@ -30,19 +30,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.Win32.Registry" Version="6.0.0-preview.5.21301.5" />
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Vintasoft.Barcode" Version="14.1.16.1" />
-    <PackageReference Include="Vintasoft.Barcode.Gdi" Version="14.1.16.1" />
-    <PackageReference Include="Vintasoft.Imaging" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Office.OpenXml" Version="4.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Shared" Version="4.0.0.3" />
+    <PackageReference Include="Vintasoft.Barcode" Version="14.2.0.1" />
+    <PackageReference Include="Vintasoft.Barcode.Gdi" Version="14.2.0.1" />
+    <PackageReference Include="Vintasoft.Imaging" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Office.OpenXml" Version="4.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Shared" Version="4.1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DemosCommonCode.Imaging\Codecs\CodecsFileFilters.cs">

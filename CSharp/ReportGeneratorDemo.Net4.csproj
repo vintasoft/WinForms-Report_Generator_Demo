@@ -82,14 +82,14 @@
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <PackageReference Include="Vintasoft.Barcode" Version="14.1.16.1" />
-    <PackageReference Include="Vintasoft.Barcode.Gdi" Version="14.1.16.1" />
-    <PackageReference Include="Vintasoft.Imaging" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Office.OpenXml" Version="4.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.2.7.1" />
-    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.2.7.1" />
-    <PackageReference Include="Vintasoft.Shared" Version="4.0.0.3" />
+    <PackageReference Include="Vintasoft.Barcode" Version="14.2.0.1" />
+    <PackageReference Include="Vintasoft.Barcode.Gdi" Version="14.2.0.1" />
+    <PackageReference Include="Vintasoft.Imaging" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Gdi" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Office.OpenXml" Version="4.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.Pdf" Version="9.3.0.1" />
+    <PackageReference Include="Vintasoft.Imaging.UI" Version="12.3.0.1" />
+    <PackageReference Include="Vintasoft.Shared" Version="4.1.0.1" />
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
@@ -260,13 +260,4 @@
     <EmbeddedResource Include="Examples\Chart\Docx\Chart_template.docx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
-  <PropertyGroup>
-  </PropertyGroup>
 </Project>
