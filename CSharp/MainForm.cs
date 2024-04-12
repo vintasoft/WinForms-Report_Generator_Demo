@@ -77,7 +77,7 @@ namespace ReportGeneratorDemo
         #region 'File' menu
 
         /// <summary>
-        /// Handles the Click event of SaveAsToolStripMenuItem object.
+        /// Handles the Click event of saveAsToolStripMenuItem object.
         /// </summary>
         private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -148,7 +148,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of ViewInPDFReaderToolStripMenuItem object.
+        /// Handles the Click event of viewInPDFReaderToolStripMenuItem object.
         /// </summary>
         private void viewInPDFReaderToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -176,7 +176,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of ViewInOfficeToolStripMenuItem object.
+        /// Handles the Click event of viewInOfficeToolStripMenuItem object.
         /// </summary>
         private void viewInOfficeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -204,7 +204,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of ExitToolStripMenuItem object.
+        /// Handles the Click event of exitToolStripMenuItem object.
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -217,7 +217,7 @@ namespace ReportGeneratorDemo
         #region 'Generate Report' menu
 
         /// <summary>
-        /// Handles the Click event of TableBasedColorTableToolStripMenuItem object.
+        /// Handles the Click event of tableBasedColorTableToolStripMenuItem object.
         /// </summary>
         private void tableBasedColorTableToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -236,7 +236,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of LoadedAssembliesToolStripMenuItem object.
+        /// Handles the Click event of loadedAssembliesToolStripMenuItem object.
         /// </summary>
         private void loadedAssembliesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -260,7 +260,7 @@ namespace ReportGeneratorDemo
         #region 'Generate invoice' menu
 
         /// <summary>
-        /// Handles the Click event of GenerateInvoiceDOCXToolStripMenuItem object.
+        /// Handles the Click event of generateInvoiceDOCXToolStripMenuItem object.
         /// </summary>
         private void generateInvoiceDOCXToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -286,7 +286,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of GenerateInvoiceXLSXTemplateToolStripMenuItem object.
+        /// Handles the Click event of generateInvoiceXLSXTemplateToolStripMenuItem object.
         /// </summary>
         private void generateInvoiceXLSXTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -317,7 +317,7 @@ namespace ReportGeneratorDemo
         #region 'Generate Pricelist' menu
 
         /// <summary>
-        /// Handles the Click event of GeneratePriceListDOCXTemplateToolStripMenuItem object.
+        /// Handles the Click event of generatePriceListDOCXTemplateToolStripMenuItem object.
         /// </summary>
         private void generatePriceListDOCXTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -343,7 +343,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of GeneratePriceListXLSXTemplateToolStripMenuItem object.
+        /// Handles the Click event of generatePriceListXLSXTemplateToolStripMenuItem object.
         /// </summary>
         private void generatePriceListXLSXTemplateToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -374,7 +374,7 @@ namespace ReportGeneratorDemo
         #region 'Examples' menu
 
         /// <summary>
-        /// Handles the Click event of DocxEditorExampleToolStripMenuItem object.
+        /// Handles the Click event of docxEditorExampleToolStripMenuItem object.
         /// </summary>
         private void docxEditorExampleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -400,7 +400,7 @@ namespace ReportGeneratorDemo
         }
 
         /// <summary>
-        /// Handles the Click event of XlsxEditorExamleToolStripMenuItem object.
+        /// Handles the Click event of xlsxEditorExamleToolStripMenuItem object.
         /// </summary>
         private void xlsxEditorExamleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -427,7 +427,7 @@ namespace ReportGeneratorDemo
 
 
         /// <summary>
-        /// Handles the Click event of DocxChartEditorExampleToolStripMenuItem object.
+        /// Handles the Click event of docxChartEditorExampleToolStripMenuItem object.
         /// </summary>
         private void docxChartEditorExampleToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -458,7 +458,7 @@ namespace ReportGeneratorDemo
         #region 'Help' menu
 
         /// <summary>
-        /// Handles the Click event of AboutToolStripMenuItem object.
+        /// Handles the Click event of aboutToolStripMenuItem object.
         /// </summary>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
