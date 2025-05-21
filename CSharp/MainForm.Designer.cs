@@ -28,8 +28,6 @@ namespace ReportGeneratorDemo
         /// </summary>
         private void InitializeComponent()
         {
-            Vintasoft.Imaging.Utils.WinFormsSystemClipboard winFormsSystemClipboard1 = new Vintasoft.Imaging.Utils.WinFormsSystemClipboard();
-            Vintasoft.Imaging.Codecs.Decoders.RenderingSettings renderingSettings1 = new Vintasoft.Imaging.Codecs.Decoders.RenderingSettings();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,6 +50,7 @@ namespace ReportGeneratorDemo
             this.examplesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dOCXEditorEampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xLSXEditorExamleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dOCXChartEditorExampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -60,7 +59,7 @@ namespace ReportGeneratorDemo
             this.imageViewer1 = new Vintasoft.Imaging.UI.ImageViewer();
             this.panel2 = new System.Windows.Forms.Panel();
             this.imageViewerToolStrip1 = new DemosCommonCode.Imaging.ImageViewerToolStrip();
-            this.dOCXChartEditorExampleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewInHtmlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -88,6 +87,7 @@ namespace ReportGeneratorDemo
             this.saveAsToolStripMenuItem,
             this.viewInPDFReaderToolStripMenuItem,
             this.viewInOfficeToolStripMenuItem,
+            this.viewInHtmlToolStripMenuItem,
             this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
@@ -250,6 +250,13 @@ namespace ReportGeneratorDemo
             this.xLSXEditorExamleToolStripMenuItem.Text = "XLSX Editor Example";
             this.xLSXEditorExamleToolStripMenuItem.Click += new System.EventHandler(this.xlsxEditorExamleToolStripMenuItem_Click);
             // 
+            // dOCXChartEditorExampleToolStripMenuItem
+            // 
+            this.dOCXChartEditorExampleToolStripMenuItem.Name = "dOCXChartEditorExampleToolStripMenuItem";
+            this.dOCXChartEditorExampleToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.dOCXChartEditorExampleToolStripMenuItem.Text = "DOCX Chart Editor Example";
+            this.dOCXChartEditorExampleToolStripMenuItem.Click += new System.EventHandler(this.docxChartEditorExampleToolStripMenuItem_Click);
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -287,10 +294,7 @@ namespace ReportGeneratorDemo
             // 
             // imageViewer1
             // 
-            this.imageViewer1.Clipboard = winFormsSystemClipboard1;
             this.imageViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.imageViewer1.ImageRenderingSettings = renderingSettings1;
-            this.imageViewer1.ImageRotationAngle = 0;
             this.imageViewer1.Location = new System.Drawing.Point(0, 0);
             this.imageViewer1.Name = "imageViewer1";
             this.imageViewer1.ShortcutCut = System.Windows.Forms.Shortcut.None;
@@ -315,25 +319,24 @@ namespace ReportGeneratorDemo
             this.imageViewerToolStrip1.AssociatedZoomTrackBar = null;
             this.imageViewerToolStrip1.CanOpenFile = false;
             this.imageViewerToolStrip1.CanPrint = false;
+            this.imageViewerToolStrip1.CaptureFromCameraButtonEnabled = true;
             this.imageViewerToolStrip1.ImageViewer = this.imageViewer1;
-            this.imageViewerToolStrip1.ScanButtonEnabled = true;
             this.imageViewerToolStrip1.Location = new System.Drawing.Point(0, 0);
             this.imageViewerToolStrip1.Name = "imageViewerToolStrip1";
-            this.imageViewerToolStrip1.PageCount = 0;
             this.imageViewerToolStrip1.PrintButtonEnabled = false;
-            this.imageViewerToolStrip1.SaveButtonEnabled = true;
+            this.imageViewerToolStrip1.ScanButtonEnabled = true;
             this.imageViewerToolStrip1.Size = new System.Drawing.Size(784, 25);
             this.imageViewerToolStrip1.TabIndex = 0;
             this.imageViewerToolStrip1.Text = "imageViewerToolStrip1";
-            this.imageViewerToolStrip1.UseImageViewerImages = true;
             this.imageViewerToolStrip1.SaveFile += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
-            // dOCXChartEditorExampleToolStripMenuItem
+            // viewInHTMLToolStripMenuItem
             // 
-            this.dOCXChartEditorExampleToolStripMenuItem.Name = "dOCXChartEditorExampleToolStripMenuItem";
-            this.dOCXChartEditorExampleToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
-            this.dOCXChartEditorExampleToolStripMenuItem.Text = "DOCX Chart Editor Example";
-            this.dOCXChartEditorExampleToolStripMenuItem.Click += new System.EventHandler(this.docxChartEditorExampleToolStripMenuItem_Click);
+            this.viewInHtmlToolStripMenuItem.Enabled = false;
+            this.viewInHtmlToolStripMenuItem.Name = "viewInHTMLToolStripMenuItem";
+            this.viewInHtmlToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.viewInHtmlToolStripMenuItem.Text = "View in HTML";
+            this.viewInHtmlToolStripMenuItem.Click += new System.EventHandler(this.viewInHtmlToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -389,5 +392,6 @@ namespace ReportGeneratorDemo
         private System.Windows.Forms.ToolStripMenuItem generateDOCXTemplateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generatePriceListXLSXTemplateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dOCXChartEditorExampleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewInHtmlToolStripMenuItem;
     }
 }

@@ -32,27 +32,29 @@ namespace ReportGeneratorDemo
             }
 #endif
 
-            // fill the document header
-            documentEditor.Body["[company_name]"] = invoiceData.Company.CompanyName;
-            documentEditor.Body["[company_address]"] = invoiceData.Company.Address;
-            documentEditor.Body["[company_city]"] = invoiceData.Company.City;
-            documentEditor.Body["[company_phone]"] = invoiceData.Company.GetPhones();
-            documentEditor.Body["[invoice_number]"] = invoiceData.InvoiceNumber;
-            documentEditor.Body["[invoice_date]"] = DateTime.Now.ToShortDateString();
-
-
             // get all tables of document
             OpenXmlDocumentTable[] tables = documentEditor.Tables;
 
+            OpenXmlDocumentTable headerTable = tables[0];
+            // fill the document header
+            headerTable["[company_name]"] = invoiceData.Company.CompanyName;
+            headerTable["[company_address]"] = invoiceData.Company.Address;
+            headerTable["[company_city]"] = invoiceData.Company.City;
+            headerTable["[company_phone]"] = invoiceData.Company.GetPhones();
+            headerTable["[invoice_number]"] = invoiceData.InvoiceNumber;
+            headerTable["[invoice_date]"] = DateTime.Now.ToShortDateString();
+
+
+
 
             // fill the "Customer Information" table
-            OpenXmlDocumentTable customerInformationTable = tables[0];
+            OpenXmlDocumentTable customerInformationTable = tables[1];
             SetCompanyInformation(customerInformationTable, "billing", invoiceData.BillingAddress);
             SetCompanyInformation(customerInformationTable, "shipping", invoiceData.ShippingAddress);
 
 
             // fill the "Shipping Method" table
-            OpenXmlDocumentTable shippingMethodTable = tables[1];
+            OpenXmlDocumentTable shippingMethodTable = tables[2];
             shippingMethodTable["[shipping_method]"] = invoiceData.ShippingMethod;
 
 
@@ -66,7 +68,7 @@ namespace ReportGeneratorDemo
             cellBoderTemplatesTable.Remove();
 
             // fill the "Order Information" table
-            OpenXmlDocumentTable orderInformationTable = tables[2];
+            OpenXmlDocumentTable orderInformationTable = tables[3];
             OpenXmlDocumentTableRow templateRow = orderInformationTable[1];
             int orderItemNumber = 1;
             List<OpenXmlDocumentTableRow> boldRows = new List<OpenXmlDocumentTableRow>();
@@ -117,7 +119,7 @@ namespace ReportGeneratorDemo
 
 
             // fill the "Notes" table
-            OpenXmlDocumentTable notesTable = tables[3];
+            OpenXmlDocumentTable notesTable = tables[4];
             notesTable["[date]"] = DateTime.Now.ToShortDateString();
             notesTable["[time]"] = DateTime.Now.ToLongTimeString();
             notesTable["[application]"] = MainForm.Title;

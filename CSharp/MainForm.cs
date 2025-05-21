@@ -14,6 +14,7 @@ using DemosCommonCode.Imaging.Codecs;
 using DemosCommonCode.Imaging;
 using Vintasoft.Imaging.Office.OpenXml.Editor.Xlsx;
 using Vintasoft.Imaging.Office.OpenXml.Editor.Docx;
+using Vintasoft.Imaging.Office.OpenXml;
 
 namespace ReportGeneratorDemo
 {
@@ -92,9 +93,14 @@ namespace ReportGeneratorDemo
 
                     CodecsFileFilters.SetSaveFileDialogFilter(saveFileDialog, true, false);
                     if (documentEditor is DocxDocumentEditor)
+                    {
                         saveFileDialog.Filter += "|DOCX Documents|*.docx";
+                        saveFileDialog.Filter += "|HTML Documents|*.html";
+                    }
                     else
+                    {
                         saveFileDialog.Filter += "|XLSX Documents|*.xlsx";
+                    }
                     saveFileDialog.FilterIndex = 3;
 
                     // if "Ok" button is clicked in "Save file" dialog
@@ -125,6 +131,22 @@ namespace ReportGeneratorDemo
 
                             // save XLSX file
                             documentEditor.Save(saveFileDialog.FileName);
+                        }
+                        // if HTML document must be created
+                        else if (fileExtension == ".HTML")
+                        {
+                            // if document editore is NOT DOCX document editor
+                            if (!(documentEditor is DocxDocumentEditor))
+                            {
+                                throw new InvalidOperationException("DOCX editor is not created.");
+                            }
+
+                            string docxFilename = "temp.docx";
+                            // save document to DOCX file
+                            documentEditor.Save(docxFilename);
+
+                            HtmlConverterSettings settings = CreateHtmlConverterSettings();
+                            OpenXmlDocumentConverter.ConvertDocxToHtml(docxFilename, saveFileDialog.FileName, settings);
                         }
                         // if PDF document must be created
                         else if (fileExtension == ".PDF")
@@ -193,6 +215,38 @@ namespace ReportGeneratorDemo
 
                     // open DOCX/XLSX in default system application
                     ProcessStartInfo processInfo = new ProcessStartInfo(filename);
+                    processInfo.UseShellExecute = true;
+                    Process.Start(processInfo);
+                }
+            }
+            catch (Exception ex)
+            {
+                DemosTools.ShowErrorMessage(ex);
+            }
+        }
+
+        /// <summary>
+        /// Handles the Click event of viewInHtmlToolStripMenuItem object.
+        /// </summary>
+        private void viewInHtmlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // get document editor
+                OpenXmlDocumentEditor documentEditor = _documentEditor;
+                // if document editor exists
+                if (documentEditor != null)
+                {
+                    string docxFilename = "temp.docx";
+                    // save document to DOCX file
+                    documentEditor.Save(docxFilename);
+
+                    string htmlFilename = "temp.html";
+                    HtmlConverterSettings settings = CreateHtmlConverterSettings();
+                    OpenXmlDocumentConverter.ConvertDocxToHtml(docxFilename, htmlFilename, settings);
+
+                    // open DOCX in default system application
+                    ProcessStartInfo processInfo = new ProcessStartInfo(htmlFilename);
                     processInfo.UseShellExecute = true;
                     Process.Start(processInfo);
                 }
@@ -474,6 +528,16 @@ namespace ReportGeneratorDemo
         #region Common
 
         /// <summary>
+        /// Creates the <see cref="HtmlConverterSettings"/>.
+        /// </summary>
+        private HtmlConverterSettings CreateHtmlConverterSettings()
+        {
+            HtmlConverterSettings settings = new HtmlConverterSettings();
+            settings.EmbedResources = true;
+            return settings;
+        }
+
+        /// <summary>
         /// Exports document to a PDF file.
         /// </summary>
         /// <param name="documentEditor">The document editor.</param>
@@ -558,11 +622,12 @@ namespace ReportGeneratorDemo
             saveAsToolStripMenuItem.Enabled = true;
             viewInOfficeToolStripMenuItem.Enabled = true;
             viewInPDFReaderToolStripMenuItem.Enabled = true;
+
+            if (_documentEditor is DocxDocumentEditor)
+                viewInHtmlToolStripMenuItem.Enabled = true;
+            else
+                viewInHtmlToolStripMenuItem.Enabled = false;
         }
-
-
-
-
 
         #endregion
 
