@@ -1,4 +1,4 @@
-namespace DemosCommonCode
+﻿namespace CommonCode
 {
     partial class WebUploaderForm
     {

@@ -1,7 +1,7 @@
-using System;
+﻿using System;
 using System.IO;
 
-using DemosCommonCode;
+using CommonCode;
 
 using Vintasoft.Imaging.Office.OpenXml.Editor;
 using Vintasoft.Imaging.Office.OpenXml.Editor.Xlsx;

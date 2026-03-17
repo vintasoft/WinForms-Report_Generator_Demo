@@ -1,4 +1,4 @@
-namespace ReportGeneratorDemo
+﻿namespace ReportGeneratorDemo
 {
     partial class MainForm
     {
@@ -58,7 +58,7 @@ namespace ReportGeneratorDemo
             this.panel3 = new System.Windows.Forms.Panel();
             this.imageViewer1 = new Vintasoft.Imaging.UI.ImageViewer();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.imageViewerToolStrip1 = new DemosCommonCode.Imaging.ImageViewerToolStrip();
+            this.imageViewerToolStrip1 = new CommonCode.Imaging.ImageViewerToolStrip();
             this.viewInHtmlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -376,7 +376,7 @@ namespace ReportGeneratorDemo
         private System.Windows.Forms.Panel panel3;
         private Vintasoft.Imaging.UI.ImageViewer imageViewer1;
         private System.Windows.Forms.Panel panel2;
-        private DemosCommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip1;
+        private CommonCode.Imaging.ImageViewerToolStrip imageViewerToolStrip1;
         private System.Windows.Forms.ToolStripMenuItem generateInvoiceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem itemsCountToolStripMenuItem;
         private System.Windows.Forms.ToolStripComboBox itemsCountComboBox;

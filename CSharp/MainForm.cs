@@ -9,9 +9,9 @@ using Vintasoft.Imaging.Office.OpenXml.Editor;
 using Vintasoft.Imaging.Codecs.Decoders;
 using Vintasoft.Imaging.Codecs.Encoders;
 
-using DemosCommonCode;
-using DemosCommonCode.Imaging.Codecs;
-using DemosCommonCode.Imaging;
+using CommonCode;
+using CommonCode.Imaging.Codecs;
+using CommonCode.Imaging;
 using Vintasoft.Imaging.Office.OpenXml.Editor.Xlsx;
 using Vintasoft.Imaging.Office.OpenXml.Editor.Docx;
 using Vintasoft.Imaging.Office.OpenXml;

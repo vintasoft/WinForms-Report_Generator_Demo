@@ -4,7 +4,7 @@ using System.Net;
 using System.Text;
 using System.Windows.Forms;
 
-namespace DemosCommonCode
+namespace CommonCode
 {
     /// <summary>
     /// A form that allows to upload data to a web server.
