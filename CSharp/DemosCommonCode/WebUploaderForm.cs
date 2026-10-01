@@ -97,8 +97,11 @@ namespace CommonCode
         /// <param name="text">The text.</param>
         private void AppendLog(string text)
         {
-            logTextBox.AppendText(text + Environment.NewLine);
-            logTextBox.ScrollToCaret();
+            if (!logTextBox.IsDisposed)
+            {
+                logTextBox.AppendText(text + Environment.NewLine);
+                logTextBox.ScrollToCaret();
+            }
         }
 
         #endregion
